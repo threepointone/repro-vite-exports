@@ -4,7 +4,7 @@ repro-vite-exports
 
 This is a reproduction of a bug with the vite plugin.
 
-You should be allowed to define durable objects and worker entry points as simple classes, as well as by extending the classes exported by the `cloudflare:workers` package.
+You should be allowed to define durable objects as classes and and worker entry points as objects, as well as by extending the classes exported by the `cloudflare:workers` package.
 
 These are all valid:
 
