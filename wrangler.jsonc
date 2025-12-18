@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "repro-vite-exports",
+  "compatibility_date": "2025-12-13",
+  "main": "src/index.ts",
+  "assets": {
+    "directory": "public"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MY_SIMPLE_DURABLE_OBJECT",
+        "class_name": "MySimpleDurableObject"
+      },
+      {
+        "name": "MY_EXTENDED_DURABLE_OBJECT",
+        "class_name": "MyExtendedDurableObject"
+      }
+    ]
+  },
+  "services": [
+    {
+      "service": "repro-vite-exports",
+      "entrypoint": "SimpleWorkerEntrypoint",
+      "binding": "MY_SIMPLE_ENTRYPOINT"
+    },
+    {
+      "service": "repro-vite-exports",
+      "entrypoint": "ExtendedWorkerEntrypoint",
+      "binding": "MY_EXTENDED_ENTRYPOINT"
+    }
+  ],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["MySimpleDurableObject", "MyExtendedDurableObject"]
+    }
+  ]
+}
