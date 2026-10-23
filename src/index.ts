@@ -18,11 +18,11 @@ export class MyExtendedDurableObject extends DurableObject {
 
 // simple worker entrypoint export
 
-export const SimpleWorkerEntrypoint = {
-  fetch: (request: Request) => {
+export class SimpleWorkerEntrypoint {
+  fetch(request: Request) {
     return new Response("Hello, world! This is a simple worker entrypoint.");
-  },
-};
+  }
+}
 
 // extended worker entrypoint export
 
